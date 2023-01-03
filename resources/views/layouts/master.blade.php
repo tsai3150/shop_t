@@ -25,6 +25,7 @@
 </head>
 
 <body>
+    {!! setting('site.ga_code') !!}
     <!--? Preloader Start -->
     <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
@@ -50,33 +51,34 @@
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
                             <nav>
-                                <ul id="navigation">
-                                    <li><a href="{{url('/')}}">Home</a></li>
-                                    <li><a href="{{url('/shop')}}">shop</a></li>
-                                    <li><a href="{{url('/about')}}">about</a></li>
-                                    <li class="hot"><a href="#">Latest</a>
+                                {{ menu('frontend','layouts.menu') }}
+                                {{-- <ul id="navigation">
+                                    <li><a href="{{url('/')}}">首頁</a></li>
+                                    <li><a href="{{url('/shop')}}">商品</a></li>
+                                    <li><a href="{{url('/about')}}">關於我們</a></li>
+                                    <li class="hot"><a href="#">購物</a>
                                         <ul class="submenu">
-                                            <li><a href="{{url('/shop')}}"> Product list</a></li>
-                                            <li><a href="{{url('/product_details')}}"> Product Details</a></li>
+                                            <li><a href="{{url('/shop')}}">商品</a></li>
+                                            <li><a href="{{url('/product_details')}}">商品細節/a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{url('/#')}}">Blog</a>
+                                    <li><a href="{{url('/#')}}">部落格</a>
                                         <ul class="submenu">
-                                            <li><a href="{{url('/blog')}}">Blog</a></li>
-                                            <li><a href="{{url('/blog-details')}}">Blog Details</a></li>
+                                            <li><a href="{{url('/blog')}}">部落格</a></li>
+                                            <li><a href="{{url('/blog-details')}}">部落格細節</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">Pages</a>
+                                    <li><a href="#">其他頁</a>
                                         <ul class="submenu">
-                                            <li><a href="{{url('/login')}}">Login</a></li>
-                                            <li><a href="{{url('/cart')}}">Cart</a></li>
-                                            <li><a href="{{url('/elements')}}">Element</a></li>
-                                            <li><a href="{{url('/confirmation')}}">Confirmation</a></li>
-                                            <li><a href="{{url('/checkout')}}">Product Checkout</a></li>
+                                            <li><a href="{{url('/login')}}">登入</a></li>
+                                            <li><a href="{{url('/cart')}}">購物車</a></li>
+                                            <li><a href="{{url('/elements')}}">設定</a></li>
+                                            <li><a href="{{url('/confirmation')}}">資訊</a></li>
+                                            <li><a href="{{url('/checkout')}}">結帳</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="{{url('/contact')}}">Contact</a></li>
-                                </ul>
+                                    <li><a href="{{url('/contact')}}">聯絡我們</a></li>
+                                </ul> --}}
                             </nav>
                         </div>
                         <!-- Header Right -->
@@ -118,7 +120,7 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Asorem ipsum adipolor sdit amet, consectetur adipisicing elitcf sed do eiusmod tem.</p>
+                                        <p>{{ setting('site.description') }}</p>
                                 </div>
                                 </div>
                             </div>
@@ -168,17 +170,26 @@
                 <div class="row align-items-center">
                     <div class="col-xl-7 col-lg-8 col-md-7">
                         <div class="footer-copy-right">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                            <p>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                    Copyright &copy;
+                                    <script>
+                                        document.write(new Date().getFullYear());
+                                    </script>All rights reserved | This template is made with
+                                    <i class="fa fa-heart" aria-hidden="true"></i>by
+                                    <a href="https://colorlib.com" target="_blank">
+                                        Colorlib
+                                    </a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </p>
                         </div>
                     </div>
                     <div class="col-xl-5 col-lg-4 col-md-5">
                         <div class="footer-copy-right f-right">
                             <!-- social -->
                             <div class="footer-social">
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="https://www.facebook.com/sai4ull"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{ setting('site.twitter_url') }}"><i class="fab fa-twitter"></i></a>
+                                <a href="{{ setting('site.fb_url') }}"><i class="fab fa-facebook-f"></i></a>
                                 <a href="#"><i class="fab fa-behance"></i></a>
                                 <a href="#"><i class="fas fa-globe"></i></a>
                             </div>

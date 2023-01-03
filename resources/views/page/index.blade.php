@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section-tittle mb-70">
-                        <h2>最新到貨</h2>
+                        <h2>全新亮相</h2>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
             <!-- Button -->
             <div class="row justify-content-center">
                 <div class="room-btn pt-70">
-                    <a href="catagori.html" class="btn view-btn1">View More Products</a>
+                    <a href="catagori.html" class="btn view-btn1">檢視更多</a>
                 </div>
             </div>
         </div>
@@ -140,7 +140,11 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                 <div class="video-wrap">
-                    <div class="play-btn "><a class="popup-video" href="https://www.youtube.com/watch?v=KMc6DyEJp04"><i class="fas fa-play"></i></a></div>
+                    <div class="play-btn ">
+                        <a class="popup-video" href="https://youtu.be/51QV0v8GGbM">
+                            <i class="fas fa-play"></i>
+                        </a>
+                    </div>
                 </div>
                 </div>
             </div>

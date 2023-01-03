@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Item;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\Route;
 
@@ -17,11 +18,21 @@ Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/confirmation','SiteController@confirmation');
     Route::get('/checkout','SiteController@checkout');
     Route::get('/contact','SiteController@contact');
-
 });
-
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+});
+Route::get('picArray',function(){
+    $item = Item::find(12);
+    dd($item->picsArray);
+});
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
