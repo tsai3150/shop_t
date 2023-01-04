@@ -8,21 +8,15 @@ use Illuminate\Http\Request;
 
 class SiteController extends Controller
 {
-    // public function index(){
-    //     $sliders = Element::where('page','index')->where('position','slider')->orderBy('sort','asc')->get();
-    //     $arrivals = Item::where('cgy_id',2)->where('enabled',true)->orderBy('sort','asc')->get();
-    //     $images = Element::where('page','index')->where('position','images')->orderBy('sort','asc')->get();
-    //     $new_item_top = Element::where('page','index')->where('position','new_item_top')->first();
-    //     $new_item = Item::where('cgy_id',1)->where('enabled',true)->orderBy('sort','asc')->get();
-    //     return view('index', compact('sliders','arrivals','images','new_item_top','new_item'));
-    // }
     public function index(){
         $sliders = Element::where('page','index')->where('position','slider')->orderBy('sort','asc')->get();
-        $arrivals = Item::where('cgy_id',2)->where('enabled',true)->orderBy('sort','asc')->get();
+        $arrivals = Item::where('cgy_id',2)->where('enabled',true)->orderBy('sort','asc')->take(3)->get();
         $images = Element::where('page','index')->where('position','images')->orderBy('sort','asc')->get();
         $new_item_top = Element::where('page','index')->where('position','new_item_top')->first();
-        $new_item = Item::where('cgy_id',1)->where('enabled',true)->orderBy('sort','asc')->get();
-        return view('page.index', compact('sliders','arrivals','images','new_item_top','new_item'));
+        $new_item = Item::where('cgy_id',1)->where('enabled',true)->orderBy('sort','asc')->take(6)->get();
+        $item_more = Element::where('page','index')->where('position','more')->first();
+        $item_row3 = Element::where('page','index')->where('position','row3')->orderBy('sort','asc')->take(3)->get();
+        return view('page.index', compact('sliders','arrivals','images','new_item_top','new_item','item_row3','item_more'));
     }
     public function shop(){
         return view('page.shop');

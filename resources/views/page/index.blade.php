@@ -47,7 +47,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                         <div class="single-new-pro mb-30 text-center">
                             <div class="product-img">
-                                <img src="{{ Voyager::image($arrival->pics) }}" alt="{{ $arrival->title }}">
+                                <img src="{{ Voyager::image($arrival->getFirstPic()) }}" alt="{{ $arrival->title }}">
                             </div>
                             <div class="product-caption">
                                 <h3><a href="product_details.html">{{ $arrival->title }}</a></h3>
@@ -109,7 +109,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
                         <div class="single-popular-items mb-50 text-center">
                             <div class="popular-img">
-                                <img src=" {{ Voyager::image($item->pics) }}" alt="{{$item->title}}">
+                                <img src="{{ Voyager::image($item->getFirstPic()) }}" alt="{{$item->title}}">
                                 <div class="img-cap">
                                     <span>加入購物車</span>
                                 </div>
@@ -151,7 +151,7 @@
             <!-- Arrow -->
             <div class="thumb-content-box">
                 <div class="thumb-content">
-                    <h3>Next Video</h3>
+                    <h3>更多影片</h3>
                     <a href="#"> <i class="flaticon-arrow"></i></a>
                 </div>
             </div>
@@ -164,28 +164,28 @@
             <div class="row align-items-center justify-content-between padding-130">
                 <div class="col-lg-5 col-md-6">
                     <div class="watch-details mb-40">
-                        <h2>Watch of Choice</h2>
-                        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                        <a href="shop.html" class="btn">Show Watches</a>
+                        <h2>{{ $item_more->title}}</h2>
+                        <p>{{ $item_more->subtitle }}</p>
+                        <a href="shop.html" class="btn">更多狗狗</a>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-10">
                     <div class="choice-watch-img mb-40">
-                        <img src="{{ asset('img/gallery/choce_watch1.png') }}" alt="">
+                        <img src="{{ Voyager::image($item->getFirstPic()) }}" alt="{{ $item_more->title }}">
                     </div>
                 </div>
             </div>
             <div class="row align-items-center justify-content-between">
                 <div class="col-lg-6 col-md-6 col-sm-10">
                     <div class="choice-watch-img mb-40">
-                        <img src="{{ asset('img/gallery/choce_watch2.png') }}" alt="">
+                        <img src="{{ Voyager::image($item->getFirstPic()) }}" alt="{{ $item_more->title }}">
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-6">
                     <div class="watch-details mb-40">
-                        <h2>Watch of Choice</h2>
-                        <p>Enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
-                        <a href="shop.html" class="btn">Show Watches</a>
+                        <h2>{{ $item_more->title}}</h2>
+                        <p>{{ $item_more->subtitle }}</p>
+                        <a href="shop.html" class="btn">更多狗狗</a>
                     </div>
                 </div>
             </div>
@@ -197,27 +197,15 @@
         <div class="container">
             <div class="method-wrapper">
                 <div class="row d-flex justify-content-between">
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-package"></i>
-                            <h6>Free Shipping Method</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
+                    @foreach ($item_row3 as $item)
+                        <div class="col-xl-4 col-lg-4 col-md-6">
+                            <div class="single-method mb-40">
+                                <i class="ti-package"></i>
+                                <h6>{{ $item->title }}</h6>
+                                <p>{{ $item->subtitle }}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-unlock"></i>
-                            <h6>Secure Payment System</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                        </div>
-                    </div> 
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="single-method mb-40">
-                            <i class="ti-reload"></i>
-                            <h6>Secure Payment System</h6>
-                            <p>aorem ixpsacdolor sit ameasecur adipisicing elitsf edasd.</p>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

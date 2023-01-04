@@ -27,6 +27,8 @@ Route::get('picArray',function(){
     $item = Item::find(12);
     dd($item->picsArray);
 });
+
+//Jetstream驗證機制的登入介面/login
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

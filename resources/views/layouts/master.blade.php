@@ -126,7 +126,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
+                    {{ menu('frontend_footer','layouts.menu_footer') }}
+                    {{-- <div class="col-xl-2 col-lg-3 col-md-3 col-sm-5">
                         <div class="single-footer-caption mb-50">
                             <div class="footer-tittle">
                                 <h4>Quick Links</h4>
@@ -164,7 +165,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
                 <!-- Footer bottom -->
                 <div class="row align-items-center">

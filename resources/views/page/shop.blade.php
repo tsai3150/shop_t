@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('title','商店')
-    
 @section('content')
     <!-- Hero Area Start-->
     <div class="slider-area ">
@@ -10,7 +8,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="hero-cap text-center">
-                            <h2>Watch Shop</h2>
+                            <h2>ㄆ肺商品</h2>
                         </div>
                     </div>
                 </div>
@@ -26,9 +24,9 @@
                     <!--Nav Button  -->
                     <nav>                                                      
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">NewestArrivals</a>
-                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Price high to low</a>
-                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> Most populer </a>
+                            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">ㄆ肺狗狗</a>
+                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> 超ㄆ肺狗狗</a>
+                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> 更多ㄆ肺 </a>
                         </div>
                     </nav>
                     <!--End Nav Button  -->
@@ -60,7 +58,7 @@
                                 <div class="popular-img">
                                     <img src="{{ asset('img/gallery/popular1.png') }}" alt="">
                                     <div class="img-cap">
-                                        <span>Add to cart</span>
+                                        <span>加入人生</span>
                                     </div>
                                     <div class="favorit-items">
                                         <span class="flaticon-heart"></span>
@@ -94,7 +92,7 @@
                                 <div class="popular-img">
                                     <img src="{{ asset('img/gallery/popular3.png') }}" alt="">
                                     <div class="img-cap">
-                                        <span>Add to cart</span>
+                                        <span>加入人生</span>
                                     </div>
                                     <div class="favorit-items">
                                         <span class="flaticon-heart"></span>
