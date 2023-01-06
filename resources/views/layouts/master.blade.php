@@ -176,7 +176,8 @@
                                     Copyright &copy;
                                     <script>
                                         document.write(new Date().getFullYear());
-                                    </script>All rights reserved | This template is made with
+                                    </script>
+                                    @lang('generic.copyright')
                                     <i class="fa fa-heart" aria-hidden="true"></i>by
                                     <a href="https://colorlib.com" target="_blank">
                                         Colorlib

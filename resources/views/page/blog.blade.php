@@ -27,8 +27,8 @@
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="{{ asset ('img/blog/single_blog_1.png') }} " alt="">
                                     <a href="#" class="blog_item_date">
-                                        <h3>15</h3>
-                                        <p>Jan</p>
+                                        <h3>{{ $article->created_at->day }}</h3>
+                                        <p>{{ $article->created_at->locale('zh_TW')->isoFormat('MM'); }}</p>
                                     </a>
                                 </div>
 

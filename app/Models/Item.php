@@ -22,6 +22,22 @@ class Item extends Model
             return null;
         }
     }
+    // public function getFirstPic()
+    // {
+    //     $havePics = strstr($this->pics, '[');
+    //     if ($havePics) {
+
+    //         $pics = json_decode($this->pics, true);
+    //         if (is_array($pics) && count($pics) > 0) {
+    //             return $pics[0];
+    //         } else {
+    //             return null;
+    //         }
+    //     } else {
+    //         return $this->pics;
+
+    //     }
+    // }
     public function getPicsArrayAttribute(){
         $data = json_decode($this->pics,true);
         return $data;
