@@ -2,6 +2,7 @@
 
 use App\Models\Item;
 use TCG\Voyager\Facades\Voyager;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 
@@ -37,4 +38,27 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+// 取得lang語系值
+Route::get('getlocale', function(){
+    App::setLocale('zh_TW');
+    return App::getLocale();
+});
+
+
+
+//呼叫__()
+Route::get('getpwdphp', function(){
+    App::setLocale('zh_TW');
+    return __('passwords.reset'); 
+});
+//使用原語系翻譯字串
+Route::get('getpwdjson', function(){
+    App::setLocale('messages');
+    return __('Your password has been reset!'); 
+});
+
+Route::get('testlang',function(){
+    return view('lang.testlang');
 });
