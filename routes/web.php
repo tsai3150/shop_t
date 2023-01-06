@@ -3,8 +3,8 @@
 use App\Models\Item;
 use TCG\Voyager\Facades\Voyager;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
 
 Route::namespace('App\Http\Controllers')->group(function(){
     Route::get('/', 'SiteController@index');
@@ -47,7 +47,6 @@ Route::get('getlocale', function(){
 });
 
 
-
 //呼叫__()
 Route::get('getpwdphp', function(){
     App::setLocale('zh_TW');
@@ -61,4 +60,42 @@ Route::get('getpwdjson', function(){
 
 Route::get('testlang',function(){
     return view('lang.testlang');
+});
+
+// 購物車示範
+Route::get('additem',function(){
+    $item = Item::find(8);
+    \Cart::session(Auth::user()->id)->add([
+        'id' => 8,
+        'name' => $item->title,
+        'price' => $item->price_new,
+        'quantity' => 1,
+        'attributes' => [], 
+        'associatedModel' => $item
+    ]);
+    return '已加入購物車中';
+})->middleware('auth');
+
+// 取得購物車內容
+Route::get('getcart', function(){
+    $items = \Cart::session(Auth::user()->id)->getContent();
+    dd($items);
+});
+
+// 更新商品
+Route::get('updateitem',function(){
+    $item = Item::find(8);
+    \Cart::session(Auth::user()->id)->update(8,[
+        'quantity' => $_GET['num'],
+        'attributes' => [], 
+        'associatedModel' => $item
+    ]);
+    return '已更新購物車';
+});
+
+// 刪除商品
+Route::get('removeitem', function(){
+    $item = Item::find(8);
+    \Cart::session(Auth::user()->id)->remove(8);
+    return '已移除商品';
 });
